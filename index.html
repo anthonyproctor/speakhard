@@ -3,159 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpeakHard Restaurant - Where Hard Conversations Meet Fine Dining</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>SpeakHard - Where Hard Conversations Meet Fine Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Caveat:wght@500&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">SpeakHard</a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#concept">Our Concept</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#menu">Menu</a>
                 <a href="#events">Private Events</a>
-                <a href="#testimonials">Testimonials</a>
                 <a href="#reservations">Reservations</a>
+            </div>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>SpeakHard</h1>
-            <p>Where Hard Conversations Meet Fine Dining</p>
+            <h1 class="glitch-text">SpeakHard</h1>
+            <p class="fade-in">Where Hard Conversations Meet Fine Dining</p>
             <div class="tagline">Why break up over text when you can do it over a nice dinner?</div>
             <a href="#reservations" class="btn">Make a Reservation</a>
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features" id="concept">
-        <h2 class="section-title reveal">Our Concept</h2>
+        <h2 class="section-title" data-aos="fade-up">Our Concept</h2>
         <div class="features-container">
-            <div class="feature-card reveal">
-                <i class="fas fa-door-closed"></i>
-                <h3>Intimate Setting</h3>
-                <p>Private booths designed for meaningful conversations, with ambient noise control for complete privacy.</p>
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <i class="fas fa-door-closed"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Intimate Setting</h3>
+                    <p>Private booths designed for meaningful conversations, with ambient noise control for complete privacy.</p>
+                </div>
             </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-concierge-bell"></i>
-                <h3>Curated Experience</h3>
-                <p>Our expert staff is trained to provide unobtrusive service, ensuring your important discussions flow naturally.</p>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Curated Experience</h3>
+                    <p>Our expert staff is trained to provide unobtrusive service, ensuring your important discussions flow naturally.</p>
+                </div>
             </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-utensils"></i>
-                <h3>Comfort Food</h3>
-                <p>Expertly crafted dishes designed to comfort and soothe during life's most challenging conversations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="gallery" id="gallery">
-        <h2 class="section-title reveal">Our Space</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Private dining area">
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17" alt="Bar area">
-            </div>
-            <div class="gallery-item reveal">
-                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="Restaurant interior">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Comfort Food</h3>
+                    <p>Expertly crafted dishes designed to comfort and soothe during life's most challenging conversations.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Menu Section -->
     <section class="menu-section" id="menu">
-        <h2 class="section-title reveal">Our Menu</h2>
+        <h2 class="section-title" data-aos="fade-up">Our Menu</h2>
         <div class="menu-grid">
-            <div class="menu-item reveal">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Heartbreak Burger" class="menu-item-image">
+            <div class="menu-item" data-aos="fade-up">
+                <div class="menu-item-image-container">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Heartbreak Burger" class="menu-item-image">
+                    <div class="menu-item-overlay">
+                        <div class="menu-item-details">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>Premium beef patty</li>
+                                <li>Caramelized onions</li>
+                                <li>Aged cheddar</li>
+                                <li>Signature comfort sauce</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="menu-item-content">
                     <h3>The Heartbreak Burger</h3>
                     <p>Premium beef patty with caramelized onions, aged cheddar, and our signature comfort sauce</p>
                     <div class="price">$24</div>
                 </div>
             </div>
-            <div class="menu-item reveal">
-                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" alt="Pasta" class="menu-item-image">
+
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="menu-item-image-container">
+                    <img src="https://images.unsplash.com/photo-1560717845-968823efbee1" alt="Separation Salmon" class="menu-item-image">
+                    <div class="menu-item-overlay">
+                        <div class="menu-item-details">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>Pan-seared salmon</li>
+                                <li>Lemon butter sauce</li>
+                                <li>Asparagus</li>
+                                <li>Herb-roasted potatoes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <div class="menu-item-content">
-                    <h3>It's Not You, It's Me Pasta</h3>
-                    <p>House-made fettuccine in a rich truffle cream sauce with wild mushrooms</p>
+                    <h3>Separation Salmon</h3>
+                    <p>Delicate pan-seared salmon with lemon butter sauce, served with asparagus and herb-roasted potatoes</p>
+                    <div class="price">$32</div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="menu-item-image-container">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Career Change Carbonara" class="menu-item-image">
+                    <div class="menu-item-overlay">
+                        <div class="menu-item-details">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>Fresh pasta</li>
+                                <li>Pancetta</li>
+                                <li>Farm-fresh eggs</li>
+                                <li>Pecorino Romano</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-content">
+                    <h3>Career Change Carbonara</h3>
+                    <p>House-made pasta tossed with crispy pancetta, farm-fresh eggs, and aged Pecorino Romano</p>
+                    <div class="price">$26</div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="menu-item-image-container">
+                    <img src="https://images.unsplash.com/photo-1602253057119-44d745d9b860" alt="Moving Away Risotto" class="menu-item-image">
+                    <div class="menu-item-overlay">
+                        <div class="menu-item-details">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>Arborio rice</li>
+                                <li>Wild mushrooms</li>
+                                <li>White truffle oil</li>
+                                <li>Parmesan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-content">
+                    <h3>Moving Away Risotto</h3>
+                    <p>Creamy wild mushroom risotto finished with white truffle oil and aged Parmesan</p>
                     <div class="price">$28</div>
-                </div>
-            </div>
-            <div class="menu-item reveal">
-                <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813" alt="Martini" class="menu-item-image">
-                <div class="menu-item-content">
-                    <h3>Moving On Martini</h3>
-                    <p>Premium vodka, fresh lime, and a hint of elderflower - served with clarity</p>
-                    <div class="price">$16</div>
-                </div>
-            </div>
-            <div class="menu-item reveal">
-                <img src="https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e" alt="Chocolate Cake" class="menu-item-image">
-                <div class="menu-item-content">
-                    <h3>Clean Break Chocolate Cake</h3>
-                    <p>Dark chocolate lava cake with vanilla bean ice cream - sweet endings</p>
-                    <div class="price">$14</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="special-events reveal" id="events">
+    <!-- Events Section -->
+    <section class="special-events" id="events">
         <div class="special-events-content">
             <h2 class="section-title">Private Events</h2>
             <h3>Create Your Moment</h3>
-            <p>Looking for a more exclusive setting? Our private dining room offers an intimate space for those extra-sensitive conversations. Perfect for family discussions, business negotiations, or any situation that requires absolute privacy.</p>
+            <p>Looking for a more exclusive setting? Our private dining room offers an intimate space for those extra-sensitive conversations.</p>
             <p>Our events team will work with you to create a customized experience, including personalized menus and specialized service arrangements.</p>
             <a href="#reservations" class="btn">Inquire About Private Events</a>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
-        <h2 class="section-title reveal">Guest Stories</h2>
-        <div class="testimonials-container">
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">"The private booths were perfect for our conversation. The staff knew exactly when to give us space and when to check in. And that Heartbreak Burger really does help."</p>
-                <p class="testimonial-author">- Sarah M.</p>
-            </div>
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">"Having a dedicated space for difficult conversations made everything easier. The ambient noise control is brilliant - we felt like we were in our own world."</p>
-                <p class="testimonial-author">- James K.</p>
-            </div>
-            <div class="testimonial-card reveal">
-                <p class="testimonial-text">"Who knew breaking up could be so... civilized? The Moving On Martini definitely helped smooth things over. Highly recommend for any serious talk."</p>
-                <p class="testimonial-author">- Rachel T.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- Reservation Section -->
     <section class="reservations" id="reservations">
-        <h2 class="section-title reveal">Make a Reservation</h2>
-        <div class="reservation-form reveal">
-            <form>
+        <h2 class="section-title">Make a Reservation</h2>
+        <div class="reservation-form">
+            <form id="reservation-form">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" required placeholder="Your Name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" required placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="date">Date</label>
                     <input type="date" id="date" required>
                 </div>
                 <div class="form-group">
-                    <label for="time">Time</label>
                     <select id="time" required>
                         <option value="">Select time</option>
                         <option value="17:00">5:00 PM</option>
@@ -166,7 +203,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="guests">Number of Guests</label>
                     <select id="guests" required>
                         <option value="">Select number of guests</option>
                         <option value="2">2 People</option>
@@ -178,8 +214,16 @@
                 <button type="submit" class="btn">Reserve Table</button>
             </form>
         </div>
+        <div class="success-message">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h3>Reservation Confirmed!</h3>
+                <p>We'll see you soon.</p>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -197,68 +241,64 @@
                 <p>Phone: (555) 123-4567</p>
                 <p>Email: info@speakhard.com</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </div>
-        <p class="copyright">&copy; 2024 SpeakHard Restaurant. All rights reserved.</p>
+        <div class="copyright">© 2024 SpeakHard Restaurant. All rights reserved.</div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                document.querySelector('.nav-links').classList.remove('active');
-            });
+        // Form submission
+        document.getElementById('reservation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const successMessage = document.querySelector('.success-message');
+            
+            form.style.opacity = 0;
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.style.display = 'flex';
+                successMessage.style.opacity = 1;
+            }, 500);
+
+            setTimeout(() => {
+                successMessage.style.opacity = 0;
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    form.style.display = 'block';
+                    form.reset();
+                    form.style.opacity = 1;
+                }, 500);
+            }, 3000);
         });
 
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
+        // Feature card hover effect
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
                 
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
             });
-        }
-
-        window.addEventListener('scroll', reveal);
-        reveal(); // Initial check
-
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Show submission feedback
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = 'Reservation Sent!';
-            btn.style.backgroundColor = '#2ecc71';
-            
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.backgroundColor = '';
-                this.reset();
-            }, 3000);
         });
     </script>
 </body>
