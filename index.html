@@ -8,174 +8,220 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "SpeakHard",
-      "description": "A unique dining experience designed for tough conversations",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Awkward Ave",
-        "addressLocality": "Tension City"
-      },
-      "telephone": "(555) 123-4567",
-      "openingHours": "Mo-Sa 18:00-24:00"
-    }
-    </script>
     <style>
-        body { background-color: #1a202c; color: #ffffff; }
-        .bg-gray-800 { background-color: #2d3748; }
-        .bg-gray-700 { background-color: #4a5568; }
-        .text-gray-900 { color: #1a202c; }
-        .hover\:bg-gray-200:hover { background-color: #edf2f7; }
-        .rounded-lg { border-radius: 0.5rem; }
-        .rounded-full { border-radius: 9999px; }
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a202c;
+            color: #ffffff;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        }
+        
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial {
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
-    <nav class="p-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">SpeakHard</h1>
-        <button id="menuToggle" class="md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-        <ul id="menu" class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-gray-800 md:bg-transparent">
-            <li class="p-4 md:p-2"><a href="#about" class="hover:text-gray-300">About</a></li>
-            <li class="p-4 md:p-2"><a href="#menu" class="hover:text-gray-300">Menu</a></li>
-            <li class="p-4 md:p-2"><a href="#reservations" class="hover:text-gray-300">Reservations</a></li>
-            <li class="p-4 md:p-2"><a href="#gallery" class="hover:text-gray-300">Gallery</a></li>
-            <li class="p-4 md:p-2"><a href="#faq" class="hover:text-gray-300">FAQ</a></li>
-        </ul>
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <h1 class="text-3xl font-bold">SpeakHard</h1>
+                <button id="menuToggle" class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <ul id="menu" class="hidden md:flex space-x-8">
+                    <li><a href="#about" class="hover:text-yellow-400 transition-colors">About</a></li>
+                    <li><a href="#menu" class="hover:text-yellow-400 transition-colors">Menu</a></li>
+                    <li><a href="#reservations" class="hover:text-yellow-400 transition-colors">Reservations</a></li>
+                    <li><a href="#gallery" class="hover:text-yellow-400 transition-colors">Gallery</a></li>
+                    <li><a href="#faq" class="hover:text-yellow-400 transition-colors">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <header class="text-center py-20 bg-gray-800">
-        <h2 class="text-5xl font-bold mb-4 animate-fadeIn">SpeakHard</h2>
-        <p class="text-xl italic mb-8 animate-slideIn">Where hard conversations meet fine dining</p>
-        <p class="text-lg mb-8 animate-slideIn">Why break up over text when you can do it over a nice dinner?</p>
-        <button class="bg-white text-gray-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors animate-pulse">
-            Reserve a Table
-        </button>
+    <header class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative text-center px-4">
+            <h2 class="text-6xl md:text-8xl font-bold mb-6">SpeakHard</h2>
+            <p class="text-2xl md:text-3xl italic mb-8 text-yellow-400">Where hard conversations meet fine dining</p>
+            <p class="text-xl mb-8">Why break up over text when you can do it over a nice dinner?</p>
+            <a href="#reservations" class="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-300 transition-colors transform hover:scale-105 duration-200">
+                Reserve Your Table
+            </a>
+        </div>
     </header>
 
     <main>
-        <section id="about" class="py-16 px-4 max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-6">About SpeakHard</h3>
-            <p class="mb-4">
-                SpeakHard offers a unique dining experience designed for those tough conversations.
-                Our intimate setting and thoughtful menu create the perfect atmosphere for open, honest dialogue.
-            </p>
-            <p>
-                Whether you're breaking up, discussing family matters, or having any difficult conversation,
-                our discreet staff and private booths ensure your comfort and privacy.
-            </p>
-            <img src="/api/placeholder/400/300" alt="SpeakHard interior" class="mt-8 mx-auto rounded-lg shadow-lg">
-        </section>
-
-        <section id="menu" class="py-16 px-4 bg-gray-800">
+        <section id="about" class="py-24 px-4">
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold mb-6 text-center">Our Menu</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">The Awkward Silence</h4>
-                        <p>A platter of finger foods perfect for those uncomfortable pauses</p>
-                        <img src="/api/placeholder/200/150" alt="The Awkward Silence platter" class="mt-4 rounded">
+                <h3 class="text-4xl font-bold mb-12 text-center">About SpeakHard</h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-lg leading-relaxed mb-6">
+                            SpeakHard offers a unique dining experience designed for those tough conversations.
+                            Our intimate setting and thoughtful menu create the perfect atmosphere for open, honest dialogue.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Whether you're breaking up, discussing family matters, or having any difficult conversation,
+                            our discreet staff and private booths ensure your comfort and privacy.
+                        </p>
                     </div>
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">Truth Serum Cocktail</h4>
-                        <p>Our signature drink to help loosen those tight lips</p>
-                        <img src="/api/placeholder/200/150" alt="Truth Serum Cocktail" class="mt-4 rounded">
-                    </div>
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">Bittersweet Endings</h4>
-                        <p>A dessert platter for two that's meant to be split</p>
-                        <img src="/api/placeholder/200/150" alt="Bittersweet Endings dessert" class="mt-4 rounded">
-                    </div>
-                    <div class="bg-gray-700 p-4 rounded-lg">
-                        <h4 class="text-xl font-semibold mb-2">The Last Supper</h4>
-                        <p>A hearty meal for those who need extra courage</p>
-                        <img src="/api/placeholder/200/150" alt="The Last Supper meal" class="mt-4 rounded">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-yellow-400 rounded-lg transform translate-x-2 translate-y-2"></div>
+                        <img src="/api/placeholder/400/300" alt="SpeakHard interior" class="rounded-lg relative z-10 w-full">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="reservations" class="py-16 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Make a Reservation</h3>
-                <p class="mb-8">Ready to have that talk? Reserve your table now.</p>
-                <form class="max-w-md mx-auto">
-                    <input type="text" placeholder="Name" class="w-full mb-4 p-2 rounded text-gray-900" required aria-label="Name">
-                    <input type="email" placeholder="Email" class="w-full mb-4 p-2 rounded text-gray-900" required aria-label="Email">
-                    <input type="date" class="w-full mb-4 p-2 rounded text-gray-900" required aria-label="Date">
-                    <input type="time" class="w-full mb-4 p-2 rounded text-gray-900" required aria-label="Time">
-                    <button type="submit" class="bg-white text-gray-900 px-6 py-2 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors">
-                        Book Now
+        <section id="menu" class="py-24 px-4 gradient-bg">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-12 text-center">Our Menu</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="menu-item glass-effect p-6 rounded-lg">
+                        <img src="/api/placeholder/300/200" alt="The Awkward Silence platter" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Awkward Silence</h4>
+                        <p class="text-gray-300">A platter of finger foods perfect for those uncomfortable pauses</p>
+                    </div>
+                    <div class="menu-item glass-effect p-6 rounded-lg">
+                        <img src="/api/placeholder/300/200" alt="Truth Serum Cocktail" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-bold mb-2">Truth Serum Cocktail</h4>
+                        <p class="text-gray-300">Our signature drink to help loosen those tight lips</p>
+                    </div>
+                    <div class="menu-item glass-effect p-6 rounded-lg">
+                        <img src="/api/placeholder/300/200" alt="Bittersweet Endings" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-bold mb-2">Bittersweet Endings</h4>
+                        <p class="text-gray-300">A dessert platter for two that's meant to be split</p>
+                    </div>
+                    <div class="menu-item glass-effect p-6 rounded-lg">
+                        <img src="/api/placeholder/300/200" alt="The Last Supper" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Last Supper</h4>
+                        <p class="text-gray-300">A hearty meal for those who need extra courage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservations" class="py-24 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-4xl font-bold mb-12 text-center">Make a Reservation</h3>
+                <form class="glass-effect p-8 rounded-lg max-w-xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
+                        <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
+                        <input type="date" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
+                        <input type="time" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
+                    </div>
+                    <button type="submit" class="w-full mt-6 bg-yellow-400 text-gray-900 p-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
+                        Book Your Table
                     </button>
                 </form>
             </div>
         </section>
 
-        <section id="testimonials" class="py-16 px-4 bg-gray-800">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">What Our Customers Say</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-gray-700 p-6 rounded-lg">
+        <section id="testimonials" class="py-24 px-4 gradient-bg">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-12 text-center">What Our Customers Say</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="testimonial glass-effect p-6 rounded-lg">
                         <p class="mb-4">"SpeakHard made our breakup so much easier. The private booth and comfort food really helped soften the blow."</p>
-                        <p class="font-semibold">- Sarah & Mike</p>
+                        <p class="font-semibold text-yellow-400">- Sarah & Mike</p>
                     </div>
-                    <div class="bg-gray-700 p-6 rounded-lg">
+                    <div class="testimonial glass-effect p-6 rounded-lg">
                         <p class="mb-4">"I finally told my parents about my career change over the Truth Serum Cocktail. It went surprisingly well!"</p>
-                        <p class="font-semibold">- Alex</p>
+                        <p class="font-semibold text-yellow-400">- Alex</p>
+                    </div>
+                    <div class="testimonial glass-effect p-6 rounded-lg">
+                        <p class="mb-4">"The perfect place to have those difficult family discussions. The staff was incredibly understanding."</p>
+                        <p class="font-semibold text-yellow-400">- The Johnson Family</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="gallery" class="py-16 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Gallery</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard interior 1" class="rounded-lg">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard interior 2" class="rounded-lg">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard dish 1" class="rounded-lg">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard dish 2" class="rounded-lg">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard cocktail" class="rounded-lg">
-                    <img src="/api/placeholder/300/200" alt="SpeakHard private booth" class="rounded-lg">
+        <section id="gallery" class="py-24 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-4xl font-bold mb-12 text-center">Gallery</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard interior 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard interior 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard dish 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard dish 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard cocktail" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group">
+                        <img src="/api/placeholder/400/300" alt="SpeakHard private booth" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-16 px-4 bg-gray-800">
+        <section id="faq" class="py-24 px-4 gradient-bg">
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h3>
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Is SpeakHard only for breakups?</h4>
-                        <p>No, SpeakHard is for any challenging conversation. While we're known for breakups, we welcome all types of difficult discussions.</p>
+                <h3 class="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h3>
+                <div class="space-y-8">
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">Is SpeakHard only for breakups?</h4>
+                        <p class="text-gray-300">No, SpeakHard is for any challenging conversation. While we're known for breakups, we welcome all types of difficult discussions.</p>
                     </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Are the booths really private?</h4>
-                        <p>Yes, our booths are designed for maximum privacy with sound-dampening features and discreet service.</p>
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">Are the booths really private?</h4>
+                        <p class="text-gray-300">Yes, our booths are designed for maximum privacy with sound-dampening features and discreet service.</p>
                     </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">What if things get too heated?</h4>
-                        <p>Our staff is trained in de-escalation techniques, and we have a "cool down" area if needed.</p>
+                    <div class="glass-effect p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-2">What if things get too heated?</h4>
+                        <p class="text-gray-300">Our staff is trained in de-escalation techniques, and we have a "cool down" area if needed.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="newsletter" class="py-16 px-4">
+        <section id="newsletter" class="py-24 px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-3xl font-bold mb-6">Stay Updated</h3>
-                <p class="mb-4">Sign up for our newsletter to get tips on having difficult conversations and exclusive menu updates.</p>
-                <form class="flex flex-col md:flex-row justify-center items-center">
-                    <input type="email" placeholder="Your email" class="w-full md:w-auto mb-4 md:mb-0 md:mr-4 p-2 rounded text-gray-900" required aria-label="Email for newsletter">
-                    <button type="submit" class="bg-white text-gray-900 px-6 py-2 rounded-full text-lg font-semibold hover:bg-gray-200 transition-colors">
+                <h3 class="text-4xl font-bold mb-6">Stay Updated</h3>
+                <p class="text-lg mb-8">Sign up for our newsletter to get tips on having difficult conversations and exclusive menu updates.</p>
+                <form class="flex flex-col md:flex-row justify-center items-center max-w-xl mx-auto">
+                    <input type="email" placeholder="Your email" class="w-full md:w-96 p-3 rounded-l bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
+                    <button type="submit" class="w-full md:w-auto mt-4 md:mt-0 bg-yellow-400 text-gray-900 px-8 py-3 rounded-r font-semibold hover:bg-yellow-300 transition-colors">
                         Subscribe
                     </button>
                 </form>
@@ -183,45 +229,24 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 py-8 px-4">
-        <div class="max-w-4xl mx-auto flex flex-wrap justify-between">
-            <div class="w-full md:w-1/3 mb-4 md:mb-0">
-                <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
-                <p class="flex items-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    (555) 123-4567
-                </p>
-                <p class="flex items-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 
-                          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                    </svg>
-                    123 Awkward Ave, Tension City
-                </p>
+    <footer class="gradient-bg py-12 px-4">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-2xl font-bold mb-4">Contact</h4>
+                <p class="mb-2">(555) 123-4567</p>
+                <p>123 Awkward Ave, Tension City</p>
             </div>
-            <div class="w-full md:w-1/3 mb-4 md:mb-0">
-                <h4 class="text-xl font-semibold mb-4">Hours</h4>
-                <p class="flex items-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                    </svg>
-                    Mon-Sat: 6pm - 12am
-                </p>
-                <p class="flex items-center mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                    </svg>
-                    Sun: Closed for recovery
-                </p>
+            <div>
+                <h4 class="text-2xl font-bold mb-4">Hours</h4>
+                <p class="mb-2">Mon-Sat: 6pm - 12am</p>
+                <p>Sun: Closed for recovery</p>
             </div>
-            <div class="w-full md:w-1/3">
-                <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+            <div>
+                <h4 class="text-2xl font-bold mb-4">Follow Us</h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-300">Facebook</a>
-                    <a href="#" class="hover:text-gray-300">Twitter</a>
-                    <a href="#" class="hover:text-gray-300">Instagram</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors">Facebook</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors">Instagram</a>
                 </div>
             </div>
         </div>
@@ -233,12 +258,14 @@
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const menu = document.getElementById('menu');
         menuToggle.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
 
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -248,16 +275,27 @@
             });
         });
 
-        gsap.from("header *", {duration: 1, y: 30, opacity: 0, stagger: 0.2});
-        gsap.from("#about, #menu, #reservations, #testimonials, #gallery, #faq, #newsletter", {
-            duration: 1,
-            y: 50,
+        // Animations
+        gsap.from("header > div > *", {
+            duration: 1.5,
+            y: 100,
             opacity: 0,
-            stagger: 0.3,
-            scrollTrigger: {
-                trigger: "#about",
-                start: "top 80%",
-            }
+            stagger: 0.2,
+            ease: "power4.out"
+        });
+
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    scrub: 1
+                }
+            });
         });
     </script>
 </body>
