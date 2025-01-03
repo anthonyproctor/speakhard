@@ -3,266 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpeakHard - Where hard conversations meet fine dining</title>
-    <meta name="description" content="SpeakHard offers a unique dining experience designed for those tough conversations. Perfect for breaking up, discussing family matters, or any difficult dialogue.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #1a202c;
-            color: #ffffff;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-        }
-        
-        .menu-item {
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial {
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial:hover {
-            transform: scale(1.02);
-        }
-    </style>
+    <title>SpeakHard Restaurant - Where Hard Conversations Meet Fine Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-900 text-white">
-    <nav class="fixed w-full z-50 glass-effect">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <h1 class="text-3xl font-bold">SpeakHard</h1>
-                <button id="menuToggle" class="md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-                <ul id="menu" class="hidden md:flex space-x-8">
-                    <li><a href="#about" class="hover:text-yellow-400 transition-colors">About</a></li>
-                    <li><a href="#menu" class="hover:text-yellow-400 transition-colors">Menu</a></li>
-                    <li><a href="#reservations" class="hover:text-yellow-400 transition-colors">Reservations</a></li>
-                    <li><a href="#gallery" class="hover:text-yellow-400 transition-colors">Gallery</a></li>
-                    <li><a href="#faq" class="hover:text-yellow-400 transition-colors">FAQ</a></li>
-                </ul>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">SpeakHard</a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#concept">Our Concept</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#menu">Menu</a>
+                <a href="#events">Private Events</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#reservations">Reservations</a>
             </div>
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative text-center px-4">
-            <h2 class="text-6xl md:text-8xl font-bold mb-6">SpeakHard</h2>
-            <p class="text-2xl md:text-3xl italic mb-8 text-yellow-400">Where hard conversations meet fine dining</p>
-            <p class="text-xl mb-8">Why break up over text when you can do it over a nice dinner?</p>
-            <a href="#reservations" class="inline-block bg-yellow-400 text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-300 transition-colors transform hover:scale-105 duration-200">
-                Reserve Your Table
-            </a>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>SpeakHard</h1>
+            <p>Where Hard Conversations Meet Fine Dining</p>
+            <div class="tagline">Why break up over text when you can do it over a nice dinner?</div>
+            <a href="#reservations" class="btn">Make a Reservation</a>
         </div>
-    </header>
+    </section>
 
-    <main>
-        <section id="about" class="py-24 px-4">
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">About SpeakHard</h3>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <p class="text-lg leading-relaxed mb-6">
-                            SpeakHard offers a unique dining experience designed for those tough conversations.
-                            Our intimate setting and thoughtful menu create the perfect atmosphere for open, honest dialogue.
-                        </p>
-                        <p class="text-lg leading-relaxed">
-                            Whether you're breaking up, discussing family matters, or having any difficult conversation,
-                            our discreet staff and private booths ensure your comfort and privacy.
-                        </p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-yellow-400 rounded-lg transform translate-x-2 translate-y-2"></div>
-                        <img src="/api/placeholder/400/300" alt="SpeakHard interior" class="rounded-lg relative z-10 w-full">
-                    </div>
+    <section class="features" id="concept">
+        <h2 class="section-title reveal">Our Concept</h2>
+        <div class="features-container">
+            <div class="feature-card reveal">
+                <i class="fas fa-door-closed"></i>
+                <h3>Intimate Setting</h3>
+                <p>Private booths designed for meaningful conversations, with ambient noise control for complete privacy.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fas fa-concierge-bell"></i>
+                <h3>Curated Experience</h3>
+                <p>Our expert staff is trained to provide unobtrusive service, ensuring your important discussions flow naturally.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fas fa-utensils"></i>
+                <h3>Comfort Food</h3>
+                <p>Expertly crafted dishes designed to comfort and soothe during life's most challenging conversations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 class="section-title reveal">Our Space</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Private dining area">
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17" alt="Bar area">
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="Restaurant interior">
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2 class="section-title reveal">Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item reveal">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Heartbreak Burger" class="menu-item-image">
+                <div class="menu-item-content">
+                    <h3>The Heartbreak Burger</h3>
+                    <p>Premium beef patty with caramelized onions, aged cheddar, and our signature comfort sauce</p>
+                    <div class="price">$24</div>
                 </div>
             </div>
-        </section>
-
-        <section id="menu" class="py-24 px-4 gradient-bg">
-            <div class="max-w-6xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">Our Menu</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="menu-item glass-effect p-6 rounded-lg">
-                        <img src="/api/placeholder/300/200" alt="The Awkward Silence platter" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h4 class="text-xl font-bold mb-2">The Awkward Silence</h4>
-                        <p class="text-gray-300">A platter of finger foods perfect for those uncomfortable pauses</p>
-                    </div>
-                    <div class="menu-item glass-effect p-6 rounded-lg">
-                        <img src="/api/placeholder/300/200" alt="Truth Serum Cocktail" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h4 class="text-xl font-bold mb-2">Truth Serum Cocktail</h4>
-                        <p class="text-gray-300">Our signature drink to help loosen those tight lips</p>
-                    </div>
-                    <div class="menu-item glass-effect p-6 rounded-lg">
-                        <img src="/api/placeholder/300/200" alt="Bittersweet Endings" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h4 class="text-xl font-bold mb-2">Bittersweet Endings</h4>
-                        <p class="text-gray-300">A dessert platter for two that's meant to be split</p>
-                    </div>
-                    <div class="menu-item glass-effect p-6 rounded-lg">
-                        <img src="/api/placeholder/300/200" alt="The Last Supper" class="w-full h-48 object-cover rounded-lg mb-4">
-                        <h4 class="text-xl font-bold mb-2">The Last Supper</h4>
-                        <p class="text-gray-300">A hearty meal for those who need extra courage</p>
-                    </div>
+            <div class="menu-item reveal">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601" alt="Pasta" class="menu-item-image">
+                <div class="menu-item-content">
+                    <h3>It's Not You, It's Me Pasta</h3>
+                    <p>House-made fettuccine in a rich truffle cream sauce with wild mushrooms</p>
+                    <div class="price">$28</div>
                 </div>
             </div>
-        </section>
-
-        <section id="reservations" class="py-24 px-4">
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">Make a Reservation</h3>
-                <form class="glass-effect p-8 rounded-lg max-w-xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" placeholder="Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
-                        <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
-                        <input type="date" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
-                        <input type="time" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
-                    </div>
-                    <button type="submit" class="w-full mt-6 bg-yellow-400 text-gray-900 p-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
-                        Book Your Table
-                    </button>
-                </form>
-            </div>
-        </section>
-
-        <section id="testimonials" class="py-24 px-4 gradient-bg">
-            <div class="max-w-6xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">What Our Customers Say</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="testimonial glass-effect p-6 rounded-lg">
-                        <p class="mb-4">"SpeakHard made our breakup so much easier. The private booth and comfort food really helped soften the blow."</p>
-                        <p class="font-semibold text-yellow-400">- Sarah & Mike</p>
-                    </div>
-                    <div class="testimonial glass-effect p-6 rounded-lg">
-                        <p class="mb-4">"I finally told my parents about my career change over the Truth Serum Cocktail. It went surprisingly well!"</p>
-                        <p class="font-semibold text-yellow-400">- Alex</p>
-                    </div>
-                    <div class="testimonial glass-effect p-6 rounded-lg">
-                        <p class="mb-4">"The perfect place to have those difficult family discussions. The staff was incredibly understanding."</p>
-                        <p class="font-semibold text-yellow-400">- The Johnson Family</p>
-                    </div>
+            <div class="menu-item reveal">
+                <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813" alt="Martini" class="menu-item-image">
+                <div class="menu-item-content">
+                    <h3>Moving On Martini</h3>
+                    <p>Premium vodka, fresh lime, and a hint of elderflower - served with clarity</p>
+                    <div class="price">$16</div>
                 </div>
             </div>
-        </section>
-
-        <section id="gallery" class="py-24 px-4">
-            <div class="max-w-6xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">Gallery</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard interior 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard interior 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard dish 1" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard dish 2" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard cocktail" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <div class="relative overflow-hidden rounded-lg group">
-                        <img src="/api/placeholder/400/300" alt="SpeakHard private booth" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="py-24 px-4 gradient-bg">
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h3>
-                <div class="space-y-8">
-                    <div class="glass-effect p-6 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2">Is SpeakHard only for breakups?</h4>
-                        <p class="text-gray-300">No, SpeakHard is for any challenging conversation. While we're known for breakups, we welcome all types of difficult discussions.</p>
-                    </div>
-                    <div class="glass-effect p-6 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2">Are the booths really private?</h4>
-                        <p class="text-gray-300">Yes, our booths are designed for maximum privacy with sound-dampening features and discreet service.</p>
-                    </div>
-                    <div class="glass-effect p-6 rounded-lg">
-                        <h4 class="text-xl font-bold mb-2">What if things get too heated?</h4>
-                        <p class="text-gray-300">Our staff is trained in de-escalation techniques, and we have a "cool down" area if needed.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="newsletter" class="py-24 px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <h3 class="text-4xl font-bold mb-6">Stay Updated</h3>
-                <p class="text-lg mb-8">Sign up for our newsletter to get tips on having difficult conversations and exclusive menu updates.</p>
-                <form class="flex flex-col md:flex-row justify-center items-center max-w-xl mx-auto">
-                    <input type="email" placeholder="Your email" class="w-full md:w-96 p-3 rounded-l bg-gray-800 border border-gray-700 focus:border-yellow-400 focus:outline-none" required>
-                    <button type="submit" class="w-full md:w-auto mt-4 md:mt-0 bg-yellow-400 text-gray-900 px-8 py-3 rounded-r font-semibold hover:bg-yellow-300 transition-colors">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="gradient-bg py-12 px-4">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div>
-                <h4 class="text-2xl font-bold mb-4">Contact</h4>
-                <p class="mb-2">(555) 123-4567</p>
-                <p>123 Awkward Ave, Tension City</p>
-            </div>
-            <div>
-                <h4 class="text-2xl font-bold mb-4">Hours</h4>
-                <p class="mb-2">Mon-Sat: 6pm - 12am</p>
-                <p>Sun: Closed for recovery</p>
-            </div>
-            <div>
-                <h4 class="text-2xl font-bold mb-4">Follow Us</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-yellow-400 transition-colors">Facebook</a>
-                    <a href="#" class="hover:text-yellow-400 transition-colors">Twitter</a>
-                    <a href="#" class="hover:text-yellow-400 transition-colors">Instagram</a>
+            <div class="menu-item reveal">
+                <img src="https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e" alt="Chocolate Cake" class="menu-item-image">
+                <div class="menu-item-content">
+                    <h3>Clean Break Chocolate Cake</h3>
+                    <p>Dark chocolate lava cake with vanilla bean ice cream - sweet endings</p>
+                    <div class="price">$14</div>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-8 text-sm opacity-70">
-            <p>© 2025 SpeakHard Restaurant. All rights reserved.</p>
+    </section>
+
+    <section class="special-events reveal" id="events">
+        <div class="special-events-content">
+            <h2 class="section-title">Private Events</h2>
+            <h3>Create Your Moment</h3>
+            <p>Looking for a more exclusive setting? Our private dining room offers an intimate space for those extra-sensitive conversations. Perfect for family discussions, business negotiations, or any situation that requires absolute privacy.</p>
+            <p>Our events team will work with you to create a customized experience, including personalized menus and specialized service arrangements.</p>
+            <a href="#reservations" class="btn">Inquire About Private Events</a>
         </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title reveal">Guest Stories</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">"The private booths were perfect for our conversation. The staff knew exactly when to give us space and when to check in. And that Heartbreak Burger really does help."</p>
+                <p class="testimonial-author">- Sarah M.</p>
+            </div>
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">"Having a dedicated space for difficult conversations made everything easier. The ambient noise control is brilliant - we felt like we were in our own world."</p>
+                <p class="testimonial-author">- James K.</p>
+            </div>
+            <div class="testimonial-card reveal">
+                <p class="testimonial-text">"Who knew breaking up could be so... civilized? The Moving On Martini definitely helped smooth things over. Highly recommend for any serious talk."</p>
+                <p class="testimonial-author">- Rachel T.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <h2 class="section-title reveal">Make a Reservation</h2>
+        <div class="reservation-form reveal">
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <select id="time" required>
+                        <option value="">Select time</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" required>
+                        <option value="">Select number of guests</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5+ People</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Reserve Table</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Location</h4>
+                <p>123 Heartbreak Lane</p>
+                <p>San Francisco, CA 94105</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hours</h4>
+                <p>Tuesday - Sunday</p>
+                <p>5:00 PM - 11:00 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@speakhard.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 SpeakHard Restaurant. All rights reserved.</p>
     </footer>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-
         // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const menu = document.getElementById('menu');
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
 
         // Smooth scroll
@@ -272,30 +219,46 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
-        // Animations
-        gsap.from("header > div > *", {
-            duration: 1.5,
-            y: 100,
-            opacity: 0,
-            stagger: 0.2,
-            ease: "power4.out"
-        });
-
-        gsap.utils.toArray('section').forEach(section => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "top 20%",
-                    scrub: 1
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
                 }
             });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show submission feedback
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Reservation Sent!';
+            btn.style.backgroundColor = '#2ecc71';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                this.reset();
+            }, 3000);
         });
     </script>
 </body>
